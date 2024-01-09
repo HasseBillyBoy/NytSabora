@@ -83,22 +83,22 @@ const data = await response.json();
           <Infographic
             billede="/icons/kort.svg"
             overskrift="Order"
-            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            beskrivelse="You buy an artwork from me"
           />
           <Infographic
             billede="/icons/print.svg"
             overskrift="Print"
-            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            beskrivelse="I print on demand"
           />
           <Infographic
             billede="/icons/mail.svg"
             overskrift="Mail"
-            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            beskrivelse="Sent by mail within 24 hours"
           />
           <Infographic
             billede="/icons/hus.svg"
             overskrift="Home"
-            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            beskrivelse="You receive within 36 hours "
           />
         </div>
       </section>
@@ -113,12 +113,12 @@ const data = await response.json();
 
           <div class="full_reviews">
             <Reviews
-              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien.  "
+              tekst="Det var simpelt at købe et print og få tilsendt i en sikret pakke så printet ikke led skade under levering"
               navn="Lærke Bue"
             />
 
             <Reviews
-              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+              tekst="Nem og hurtig handel. Fragten var sikker og hurtig"
               navn="Frederikke Nygaard"
             />
 
@@ -128,7 +128,7 @@ const data = await response.json();
             />
 
             <Reviews
-              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+              tekst="God kommunikation, og modtog mit print dagen efter bestilling. Farverne står stærkt, og kvaliteten af papiret er i top"
               navn="Hasse Bill"
             />
           </div>
@@ -138,7 +138,7 @@ const data = await response.json();
               <div class="slide slide_1">
                 <div class="slide-content">
                   <Reviews
-                    tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien.  "
+                    tekst="Det var simpelt at købe et print og få tilsendt i en sikret pakke så printet ikke led skade under levering"
                     navn="Lærke Bue"
                   />
                 </div>
@@ -146,7 +146,7 @@ const data = await response.json();
               <div class="slide slide_2">
                 <div class="slide-content">
                   <Reviews
-                    tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+                    tekst="Nem og hurtig handel. Fragten var sikker og hurtig"
                     navn="Frederikke Nygaard"
                   />
                 </div>
@@ -162,7 +162,7 @@ const data = await response.json();
               <div class="slide slide_4">
                 <div class="slide-content">
                   <Reviews
-                    tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+                    tekst="God kommunikation, og modtog mit print dagen efter bestilling. Farverne står stærkt, og kvaliteten af papiret er i top"
                     navn="Hasse Bill"
                   />
                 </div>
@@ -335,6 +335,8 @@ const data = await response.json();
     background-color: var(--green);
     border-bottom: 1px solid var(--lightsand);
     padding-bottom: 10px;
+    border-radius: 25px;
+    margin-top: 30px;
   }
   .slide-content {
     height: 100%;
@@ -352,6 +354,7 @@ const data = await response.json();
     background: var(--green);
     position: relative;
     z-index: 1;
+    border-radius: 25px;
   }
   #overflow {
     width: 100%;
