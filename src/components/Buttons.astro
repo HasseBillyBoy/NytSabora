@@ -43,7 +43,7 @@ const { text, link, variant, target, navn } = Astro.props;
       color: var(--pink);
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       text-decoration: none;
-      font-size: 30px;
+      font-size: 25px;
     }
 
     .links {
@@ -55,12 +55,13 @@ const { text, link, variant, target, navn } = Astro.props;
     }
 
     .links:hover {
-      background-color: var(--green);
+      background-color: var(--pink);
     }
 
     /*HOVER BOKS*/
     a:hover {
-      border: 1px solid var(--green);
+      border: 1px solid var(--pink);
+      color: var(--green);
     }
   }
 
