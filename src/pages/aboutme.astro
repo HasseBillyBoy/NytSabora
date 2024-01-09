@@ -1,0 +1,54 @@
+---
+import "../stylesheet/globalstylesheet.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Aboutcomponent from "../components/Aboutcomponent.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/Kande.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier" />
+		<meta name="keywords" content="Sabora Studio Morrocan poster art kunstplakater farverige malerier" />
+    <title>Sabora Studio | Morrocan Poster Art | About Me</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <Aboutcomponent
+        title="Sabrine Benmoumou"
+        img="/imgs/benmoumou.webp"
+        alt="selfportrait"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel non, molestias explicabo sint minus ab ullam. Dolores culpa expedita ex, harum delectus dolorem odit sequi perspiciatis natus ipsum! In explicabo debitis distinctio. Iure rem ut similique?"
+      />
+      <Aboutcomponent
+        title="Materials"
+        img="/imgs/materialsicon.webp"
+        alt="materials"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel non, molestias explicabo sint minus ab ullam. Dolores culpa expedita ex, harum delectus dolorem odit sequi perspiciatis natus ipsum! In explicabo debitis distinctio. Iure rem ut similique?"
+      />
+      <Aboutcomponent
+        title="Charity"
+        img="/imgs/charityicon.webp"
+        alt="charity"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel non, molestias explicabo sint minus ab ullam. Dolores culpa expedita ex, harum delectus dolorem odit sequi perspiciatis natus ipsum! In explicabo debitis distinctio. Iure rem ut similique?"
+      />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: var(--green);
+  }
+  @media screen and (min-width: 600px) {
+  }
+</style>

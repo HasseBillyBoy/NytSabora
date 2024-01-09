@@ -1,0 +1,39 @@
+---
+const { overskrift, beskrivelse, billede } = Astro.props;
+import "../stylesheet/globalstylesheet.css";
+---
+
+<div class="info">
+  <h4>{overskrift}</h4>
+
+  <img src={billede} alt="Buy poster art infographic icons" />
+
+  <p>{beskrivelse}</p>
+</div>
+
+<style>
+  h4 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: var(--lightsand);
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    background-color: var(--brown);
+    padding: 10px;
+    border-radius: 25px;
+  }
+
+  p {
+    color: var(--lightsand);
+  }
+
+  /* .info p {
+    padding: 0px 40px;
+  } */
+</style>

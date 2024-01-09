@@ -1,0 +1,160 @@
+---
+import Buttons from "./Buttons.astro";
+---
+
+<div class="navigation">
+  <div class="logo">
+    <a href="/"><img src="/icons/Kande.svg" alt="Sabora Studio Logo" /></a>
+  </div>
+
+  <div class="nav_linje">
+    <!-- ---- BURGERMENU ---- -->
+    <div class="nav">
+      <Buttons variant="primary" link="/" text="Home" navn="Go to home" />
+      <Buttons
+        variant="primary"
+        link="/aboutme"
+        text="About"
+        navn="Go to About me"
+      />
+      <Buttons
+        variant="primary"
+        link="/portfolio"
+        text="Portfolio"
+        navn="Go to portfolio"
+      />
+
+      <!-- <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Portfolio</a> -->
+    </div>
+
+    <button class="hamburger" aria-label="menu">
+      <div class="bar"></div>
+    </button>
+  </div>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .navigation {
+    display: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: 60px;
+    background-color: var(--brown);
+    align-content: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .logo,
+  img {
+    height: 50px;
+    padding: 5px;
+  }
+
+  .nav_linje {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 50px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 40px;
+    align-self: center;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .hamburger {
+      position: relative;
+      display: block;
+      width: 35px;
+      cursor: pointer;
+      margin-right: 20px;
+      z-index: 99;
+
+      appearance: none;
+      background: none;
+      outline: none;
+      border: none;
+    }
+
+    .hamburger .bar,
+    .hamburger:after,
+    .hamburger:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 5px;
+      background-color: #fbe9dd;
+      margin: 6px 0px;
+      transition: 0.4s;
+    }
+
+    .hamburger.is-active:before {
+      transform: rotate(-45deg) translate(-8px, 6.5px);
+    }
+
+    .hamburger.is-active:after {
+      transform: rotate(45deg) translate(-8.5px, -8px);
+    }
+
+    .hamburger.is-active .bar {
+      opacity: 0;
+    }
+
+    .nav.is-active {
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 98;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      min-height: 100vh;
+      display: block;
+      /* z-index: 98; */
+      background-color: var(--green);
+      padding-top: 120px;
+      transition: 0.4s;
+    }
+
+    .nav a {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto 16px;
+      text-align: center;
+      padding: 12px 16px;
+      border: 1px solid var(--orange);
+      text-decoration: none;
+      color: var(--orange);
+    }
+  }
+</style>
+
+<script>
+  const menu_btn = document.querySelector(".hamburger");
+  const mobile_menu = document.querySelector(".nav");
+
+  menu_btn.addEventListener("click", function () {
+    menu_btn.classList.toggle("is-active");
+    mobile_menu.classList.toggle("is-active");
+  });
+</script>

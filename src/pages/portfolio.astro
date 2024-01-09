@@ -1,0 +1,95 @@
+---
+import "../stylesheet/globalstylesheet.css";
+import Card from "../components/Card.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork";
+// her henter vi samtlige objekter i artwork - i modsætning til på index, hvor vi lavede en begrænsning "?limit=4"
+
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsaWpjbmVkdmd0cHBxem13aWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3Mzc1NDYsImV4cCI6MjAxNjMxMzU0Nn0.ZB94RLQFTwNWgedKWPsDaUC6axpOb001oC9_gVqzCnY";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/Kande.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier" />
+		<meta name="keywords" content="Sabora Studio Morrocan poster art kunstplakater farverige malerier" />
+    <title>Sabora Studio | Morrocan Poster Art | Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div class="heading">
+        <h2>Portfolio</h2>
+      </div>
+      <section class="artwork">
+        {
+          data.map((artpiece) => {
+            return <Card data={artpiece} />;
+          })
+        }
+      </section>
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
+</html>
+
+<style>
+  .body {
+    background-color: (var--green);
+  }
+  .artwork {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1em;
+    margin-bottom: 100px;
+  }
+  body {
+    background-color: var(--green);
+  }
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+.artwork {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 1em;
+}
+@media only screen and (min-width: 600px) {
+
+.artwork {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 1em;
+}
+}
+</style>
+
+<!-- ovenstående autofill + "minmax" på fx 160px, betyder: 
+  - HVIS skærmbredden bliver 160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med
+elementer. HVIS skærmbredden bliver 160px større, så tilføjer den en column og fylder
+ud. -->
+
+

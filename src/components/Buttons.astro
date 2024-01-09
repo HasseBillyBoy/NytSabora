@@ -1,0 +1,119 @@
+---
+import "../stylesheet/globalstylesheet.css";
+const { text, link, variant, target, navn } = Astro.props;
+---
+
+<div class={variant}>
+  <div class="links">
+    <a aria-label={navn} target={target} href={link}>{text}</a>
+  </div>
+</div>
+
+<style>
+  /* ----- RESET CSS -----*/
+
+ 
+  /* ----- LINK STYLING ----- */
+  .primary {
+    a,
+    a:active,
+    a:visited {
+      color: var(--lightsand);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    .links {
+      display: inline;
+    }
+
+    /*HOVER BOKS*/
+    a:hover {
+      border: 1px solid #fcb0b5;
+      padding: 4px 9px;
+      margin: -10px;
+    }
+  }
+
+  .secondary {
+    a,
+    a:active,
+    a:visited {
+      color: #923a21;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-decoration: none;
+      font-size: 30px;
+    }
+
+    .links {
+      /* margin-left: 6px; */
+      border: 1px solid var(--green);
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .links:hover {
+      background-color: var(--green);
+    }
+
+    /*HOVER BOKS*/
+    a:hover {
+      border: 1px solid var(--green);
+    }
+  }
+
+  .tertiary {
+    a,
+    a:active,
+    a:visited {
+      color: #923a21;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .links {
+      /* margin-left: 6px; */
+      border: 1px solid var(--green);
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .links:hover {
+      background-color: var(--green);
+    }
+
+    /*HOVER BOKS*/
+    a:hover {
+      border: 1px solid var(--green);
+    }
+  }
+
+  @media (min-width: 600px) {
+    .primary {
+      a,
+      a:active,
+      a:visited {
+        color: #fbe9dd;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        font-size: 15px;
+      }
+    }
+
+    .tertiary {
+      a,
+      a:active,
+      a:visited {
+        color: #923a21;
+        font-family: Abril Fatface;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    }
+  }
+</style>
