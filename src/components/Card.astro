@@ -5,7 +5,7 @@ const { data } = Astro.props;
 <article>
   <div class="container">
     <a href={`/artwork/${data.slug}`} aria-label="Go to artwork">
-      <img loading="lazy" src=`/imgs/${data.imgpath}` alt={data.title} class="image" />
+      <img src=`/imgs/${data.imgpath}` alt={data.title} class="image" />
       <div class="overlay">
         <div class="text"><p>{data.title}</p></div>
       </div>
